@@ -1,0 +1,6 @@
+$bdRadius: 15px;
+
+@mixin border {
+  border: 2px solid #adabab;
+  border-radius: 15px;
+}

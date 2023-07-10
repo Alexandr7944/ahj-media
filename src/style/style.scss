@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import './option.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  padding: 15px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #222022;
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+  color: #efedef;
+}
+
+.chat {
+  width: 100%;
+  max-width: 800px;
+  padding: 15px;
+  background-color: #ceccce;
+  @include border;
+
+  &__message {
+    min-height: 300px;
+    max-height: 500px;
+    overflow-y: auto;
+  }
+
+  &__item {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+    background-color: #4c4947;
+    @include border;
+  }
+
+  &__time {
+    align-items: flex-end;
+  }
+
+  &__input {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px;
+    background-color: #4c4947;
+    @include border;
+
+    input {
+      width: 100%;
+      padding: 15px;
+      @include border;
+    }
+
+    .audio-record,
+    .video-record,
+    .stop-record {
+      width: 40px;
+      height: 40px;
+      border: none;
+      background-color: transparent;
+      cursor: pointer; 
+    }
+
+    .audio-record {
+      background: url('../image/free-icon-microphone-2377812.png') center center/cover no-repeat;
+    }
+
+    .video-record {
+      background: url('../image/free-icon-video-camera-1229541.png') center center/cover no-repeat;
+    }
+
+    .stop-record {
+      background: url('../image/9348126.png') center center/contain no-repeat;
+    }
+  }
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__container {
+    max-width: 300px;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: $bdRadius;
+    
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    border: 1px solid #000;
+    border-radius: $bdRadius;
+  }
+
+  &__buttons {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px 10px;
+
+    button {
+      padding: 15px;
+      background-color: transparent;
+      border: 1px solid #000;
+      border-radius: $bdRadius;
+      cursor: pointer;
+    }
+  }
+}
